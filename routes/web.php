@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//(FashionController::class)->prefix('admin')のRouting設定
+use App\Http\Controllers\Admin\FashionController;
+Route::controller(FashionController::class)->prefix('admin')->group(function() {
+    Route::get('fashion/create', 'add');
+});
