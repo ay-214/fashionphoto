@@ -22,3 +22,7 @@ use App\Http\Controllers\Admin\FashionController;
 Route::controller(FashionController::class)->prefix('admin')->group(function() {
     Route::get('fashion/create', 'add');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
