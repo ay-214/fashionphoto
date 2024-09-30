@@ -22,7 +22,7 @@
         <!-- Styles -->
         {{-- Laravel標準で用意されているCSSを読み込む --}}
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        {{-- 後に作成するCSSを読み込む --}}
+        {{-- この章の後半で作成するCSSを読み込む --}}
         <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     </head>
     <body>
