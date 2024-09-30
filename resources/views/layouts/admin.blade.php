@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        {{-- 各ページごとにtitleタグを入れる --}}
+        {{-- 各ページごとにtitleタグを入れるために空ける --}}
         <title>@yield('title')</title>
 
         <!-- Scripts -->
@@ -52,7 +52,7 @@
             {{-- ここまでナビゲーションバー --}}
 
             <main class="py-4">
-                {{-- コンテンツをここに入れる --}}
+                {{-- コンテンツをここに入れるために空ける --}}
                 @yield('content')
             </main>
         </div>
