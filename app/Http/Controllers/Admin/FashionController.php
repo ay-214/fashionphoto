@@ -12,4 +12,10 @@ class FashionController extends Controller
     {
         return view('admin.fashion.create');
     }
+
+     //admin/fashion/createにリダイレクトする設定を追加
+     public function create(Request $request)
+    {
+        return redirect('admin/fashion/create');
+    }
 }
