@@ -47,6 +47,9 @@
                                         <div>
                                             <a href="{{ route('admin.fashion.edit', ['id' => $fashion->id]) }}">編集</a>
                                         </div>
+                                        <div>
+                                            <a href="{{ route('admin.fashion.delete', ['id' => $fashion->id]) }}">削除</a>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
