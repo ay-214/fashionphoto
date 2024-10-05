@@ -23,6 +23,8 @@ Route::controller(FashionController::class)->prefix('admin')->name('admin.')->mi
     Route::get('fashion/create', 'add')->name('fashion.add');
     Route::post('fashion/create', 'create')->name('fashion.create');
     Route::get('fashion', 'index')->name('fashion.index');
+    Route::get('fashion/edit', 'edit')->name('fashion.edit');
+    Route::post('fashion/edit', 'update')->name('fashion.update');
 });
 
 Auth::routes();
