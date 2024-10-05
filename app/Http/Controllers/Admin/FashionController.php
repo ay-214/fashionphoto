@@ -5,8 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-// Fashion Modelが扱えるように以下の一文を追加
+// Fashion Modelの使用を宣言する
 use App\Models\Fashion;
+
+// History Modelの使用を宣言する
+use App\Models\History;
+
+// 時刻を取得するため、Carbonという日付操作ライブラリの使用を宣言する
+use Carbon\Carbon;
+
 
 class FashionController extends Controller
 {
@@ -95,6 +102,12 @@ class FashionController extends Controller
 
         // 該当するデータを上書きして保存する
         $fashion->fill($fashion_form)->save();
+
+        // Fashion Modelを保存するタイミングで、同時にHistory Modelにも編集履歴を追加する
+        $history = new History();
+        $history->fashion_id = $fashion->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
 
         return redirect('admin/fashion');
     }
