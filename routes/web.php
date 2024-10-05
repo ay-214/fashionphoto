@@ -25,6 +25,7 @@ Route::controller(FashionController::class)->prefix('admin')->name('admin.')->mi
     Route::get('fashion', 'index')->name('fashion.index');
     Route::get('fashion/edit', 'edit')->name('fashion.edit');
     Route::post('fashion/edit', 'update')->name('fashion.update');
+    Route::get('fashion/delete', 'delete')->name('fashion.delete');
 });
 
 Auth::routes();
