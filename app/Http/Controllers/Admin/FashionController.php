@@ -98,6 +98,18 @@ class FashionController extends Controller
 
         return redirect('admin/fashion');
     }
+
+    //delete Actionを追記
+    public function delete(Request $request)
+    {
+        // 該当するFashion Modelを取得
+        $fashion = Fashion::find($request->id);
+
+        // 削除する
+        $fashion->delete();
+
+        return redirect('admin/fashion/');
+    }
 }
 
 
