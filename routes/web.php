@@ -31,3 +31,6 @@ Route::controller(FashionController::class)->prefix('admin')->name('admin.')->mi
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+use App\Http\Controllers\FashionController as PublicFashionController;
+Route::get('/', [PublicFashionController::class, 'index'])->name('fashion.index');
