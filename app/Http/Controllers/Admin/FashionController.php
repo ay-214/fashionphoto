@@ -58,6 +58,58 @@ class FashionController extends Controller
         }
         return view('admin.fashion.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
+
+    //edit Actionを追記
+    public function edit(Request $request)
+    {
+        // Fashion Modelからデータを取得する
+        $fashion = Fashion::find($request->id);
+        if (empty($fashion)) {
+            abort(404);
+        }
+        return view('admin.fashion.edit', ['fashion_form' => $fashion]);
+    }
+
+    //update Actionを追記
+    public function update(Request $request)
+    {
+        // Validationをかける
+        $this->validate($request, Fashion::$rules);
+        // Fashion Modelからデータを取得する
+        $fashion = Fashion::find($request->id);
+        // 送信されてきたフォームデータを格納する
+        $fashion_form = $request->all();
+
+        if ($request->remove == 'true') {
+            $fashion_form['image_path'] = null;
+        } elseif ($request->file('image')) {
+            $path = $request->file('image')->store('public/image');
+            $fashion_form['image_path'] = basename($path);
+        } else {
+            $fashion_form['image_path'] = $fashion->image_path;
+        }
+
+        unset($fashion_form['image']);
+        unset($fashion_form['remove']);
+        unset($fashion_form['_token']);
+
+        // 該当するデータを上書きして保存する
+        $fashion->fill($fashion_form)->save();
+
+        return redirect('admin/fashion');
+    }
+
+    //delete Actionを追記
+    public function delete(Request $request)
+    {
+        // 該当するFashion Modelを取得
+        $fashion = Fashion::find($request->id);
+
+        // 削除する
+        $fashion->delete();
+
+        return redirect('admin/fashion/');
+    }
 }
 
 
