@@ -34,6 +34,7 @@
                                 <th width="10%">ID</th>
                                 <th width="20%">タイトル：スタイリングポイント</th>
                                 <th width="50%">本文：身長とか</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,6 +43,11 @@
                                     <th>{{ $fashion->id }}</th>
                                     <td>{{ Str::limit($fashion->title, 100) }}</td>
                                     <td>{{ Str::limit($fashion->body, 250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ route('admin.fashion.edit', ['id' => $fashion->id]) }}">編集</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
