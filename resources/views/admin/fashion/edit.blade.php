@@ -1,11 +1,11 @@
 @extends('layouts.admin')
-@section('title', '投稿スタイリングフォトの編集')
+@section('title', 'Styling Postの編集')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>投稿スタイリングフォト編集</h2>
+                <h2>Styling Post Edit</h2>
                 <form action="{{ route('admin.fashion.update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
@@ -15,19 +15,19 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="title">タイトル：スタイリングポイント</label>
+                        <label class="col-md-4" for="title">スタイリングテーマ</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="title" value="{{ $fashion_form->title }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">本文：身長とか</label>
+                        <label class="col-md-4" for="body">スタイリングポイント</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ $fashion_form->body }}</textarea>
+                            <textarea class="form-control" name="body" rows="5">{{ $fashion_form->body }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="image">画像</label>
+                        <label class="col-md-4" for="image">スタイリングフォト</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="remove" value="true">スタイリングフォトを削除
                                 </label>
                             </div>
                         </div>
