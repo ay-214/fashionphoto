@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">ポイント</label>
+                        <label class="col-md-2">スタイリングポイント</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
                         </div>
