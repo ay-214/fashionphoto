@@ -21,19 +21,19 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2">スタイリングテーマ</label>
+                        <label class="col-md-4">スタイリングテーマ</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">スタイリングポイント</label>
+                        <label class="col-md-4">スタイリングポイント</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">スタイリングフォト</label>
+                        <label class="col-md-4">スタイリングフォト</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                         </div>
