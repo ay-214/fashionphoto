@@ -27,6 +27,7 @@
         @endif
         <hr color="#C0C0C0">
         <div class="row">
+                {{-- 投稿を3つ横並びに表示する設定 --}}
                 @foreach($posts as $post)
                     <div class="col-md-4">
                         <div class="date">
