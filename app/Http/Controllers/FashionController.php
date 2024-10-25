@@ -23,4 +23,25 @@ class FashionController extends Controller
         // また View テンプレートに headline、 posts、という変数を渡している
         return view('fashion.index', ['headline' => $headline, 'posts' => $posts]);
     }
+
+    //ホーム画面に検索機能をつける
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $posts = [];
+        if ($query) {
+            $posts = Fashion::where('title', 'LIKE', "%{$query}%")
+                            ->orWhere('body', 'LIKE', "%{$query}%")
+                            ->get();
+        }
+
+        if (count($posts) > 0) {
+            $headline = $posts->shift();
+        } else {
+            $headline = null;
+        }
+
+        return view('fashion.index', ['headline' => $headline, 'posts' => $posts]);
+    }
 }
