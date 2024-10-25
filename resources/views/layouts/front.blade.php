@@ -81,7 +81,13 @@
             <div class="col-md-4 mx-auto">
             <h3>Styling Photo.</h3>
             </div>
-    
+            {{-- 投稿に対してフリーワードでの検索機能をつける --}} 
+            <h4>検索</h4>
+            <form action="{{ route('fashion.search') }}" 
+                 method="GET">
+                <input type="search" name="query" placeholder="検索..." required>
+                <button type="submit">Search</button>
+            </form>
             <main class="py-4">
                  {{-- コンテンツをここに入れる --}}
                  @yield('content')
