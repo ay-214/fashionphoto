@@ -78,16 +78,16 @@
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
-            <div class="col-md-8 mx-auto">
-            <h3></h3>
+            <div class="col-md-4 mx-auto">
+            <h3>Styling Photo.</h3>
             </div>
-            <div class="col-md-8 mx-auto">
-            <h3>身長150cmが提案する、低身長さんのためのファッションコーディネート。</h3>
-            </div>
+    
             <main class="py-4">
-                {{-- コンテンツをここに入れる --}}
-                @yield('content')
+                 {{-- コンテンツをここに入れる --}}
+                 @yield('content')
             </main>
         </div>
     </body>
 </html>
+
+
