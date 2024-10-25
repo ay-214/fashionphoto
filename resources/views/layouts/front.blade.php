@@ -26,6 +26,9 @@
         <link href="{{ asset('css/front.css') }}" rel="stylesheet">
     </head>
     <body>
+        <div class="col-md-1 mx-auto">
+         <h2>Styling for a height of 150</h2>
+        </div>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバー --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
@@ -75,7 +78,12 @@
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
-
+            <div class="col-md-8 mx-auto">
+            <h3></h3>
+            </div>
+            <div class="col-md-8 mx-auto">
+            <h3>身長150cmが提案する、低身長さんのためのファッションコーディネート。</h3>
+            </div>
             <main class="py-4">
                 {{-- コンテンツをここに入れる --}}
                 @yield('content')

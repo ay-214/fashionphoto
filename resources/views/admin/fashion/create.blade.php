@@ -2,15 +2,15 @@
 @extends('layouts.admin')
 
 
-{{-- admin.blade.phpの@yield('title')に'スタイリングフォトの投稿'を埋め込む --}}
-@section('title', 'スタイリングフォトの投稿')
+{{-- admin.blade.phpの@yield('title')に'Styling Post(スタイリングフォトの投稿)'を埋め込む --}}
+@section('title', 'Styling Post')
 
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>スタイリングフォト投稿</h2>
+                <h2>Styling Post</h2>
                 <form action="{{ route('admin.fashion.create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
@@ -21,19 +21,19 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2">タイトル：スタイリングポイント</label>
+                        <label class="col-md-4">スタイリングテーマ</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">本文：身長とか</label>
+                        <label class="col-md-4">スタイリングポイント</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">画像：スタイリングフォト</label>
+                        <label class="col-md-4">スタイリングフォト</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                         </div>
