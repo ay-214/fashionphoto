@@ -79,15 +79,16 @@
             </nav>
             {{-- ここまでナビゲーションバー --}}
             <div class="col-md-4 mx-auto">
-            <h3>Styling Photo.</h3>
+            <h5>低身長さんの、毎日のコーディネートにヒントを。</h5>
             </div>
             {{-- 投稿に対してフリーワードでの検索機能をつける --}} 
-            <h4>検索</h4>
+            <h6>Let's Search!</h6>
             <form action="{{ route('fashion.search') }}" 
                  method="GET">
                 <input type="search" name="query" placeholder="検索..." required>
                 <button type="submit">Search</button>
             </form>
+
             <main class="py-4">
                  {{-- コンテンツをここに入れる --}}
                  @yield('content')
