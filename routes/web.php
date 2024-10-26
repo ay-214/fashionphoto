@@ -25,7 +25,7 @@ Route::controller(FashionController::class)->prefix('admin')->name('admin.')->mi
     Route::get('fashion', 'index')->name('fashion.index');
     Route::get('fashion/edit', 'edit')->name('fashion.edit');
     Route::post('fashion/edit', 'update')->name('fashion.update');
-    Route::get('fashion/delete', 'delete')->name('fashion.delete');
+    Route::get('fashion/delete', 'delete')->name('fashion.delete'); 
 });
 
 Auth::routes();
@@ -33,4 +33,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 use App\Http\Controllers\FashionController as PublicFashionController;
-Route::get('/', [PublicFashionController::class, 'index'])->name('fashion.index');
+Route::controller(PublicFashionController::class)->group(function() {
+    Route::get('/', 'index')->name('fashion.index');
+
+    //⇩front.blade.phpでユーザーが検索する機能をつけるために追加
+    Route::get('search', 'search')->name('fashion.search'); 
+});
