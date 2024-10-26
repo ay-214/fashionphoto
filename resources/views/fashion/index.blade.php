@@ -3,7 +3,7 @@
     <div class="container">
         <hr color="#C0C0C0">
         @if (!is_null($headline))
-        <h1>New Photo! -新着スタイリングスナップ-</h1>
+        <h1>New! -新着スタイリングスナップ-</h1>
             <div class="row">
                 <div class="headline col-md-10 mx-auto">
                     <div class="row">
