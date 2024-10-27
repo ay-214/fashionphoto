@@ -30,18 +30,20 @@ class FashionController extends Controller
         $query = $request->input('query');
 
         $posts = [];
+        
         if ($query) {
+            
             $posts = Fashion::where('title', 'LIKE', "%{$query}%")
                             ->orWhere('body', 'LIKE', "%{$query}%")
-                            ->get();
+                            ->get()->sortByDesc('updated_at');
         }
-
+        
         if (count($posts) > 0) {
             $headline = $posts->shift();
         } else {
             $headline = null;
         }
-
+        
         return view('fashion.index', ['headline' => $headline, 'posts' => $posts]);
     }
 }
