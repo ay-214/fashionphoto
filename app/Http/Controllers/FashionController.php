@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 // Fashion Modelの使用を宣言
 use App\Models\Fashion;
 
@@ -11,7 +12,7 @@ class FashionController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Fashion::all()->sortByDesc('updated_at');
+        $posts = Fashion::orderBy('updated_at', 'desc')->paginate(10);
 
         if (count($posts) > 0) {
             $headline = $posts->shift();
@@ -35,7 +36,7 @@ class FashionController extends Controller
             
             $posts = Fashion::where('title', 'LIKE', "%{$query}%")
                             ->orWhere('body', 'LIKE', "%{$query}%")
-                            ->get()->sortByDesc('updated_at');
+                            ->orderBy('updated_at', 'desc')->paginate(10);
         }
         
         if (count($posts) > 0) {
