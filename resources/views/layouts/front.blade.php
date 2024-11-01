@@ -93,6 +93,13 @@
                  {{-- コンテンツをここに入れる --}}
                  @yield('content')
             </main>
+            <div class="row">
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn">
+                    {{ $posts->appends(request()->query())->links() }}
+                    </button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
