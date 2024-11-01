@@ -54,9 +54,5 @@
             @endif
 
         </div>
-        <div class="row">
-        {{ $posts->appends(request()->query())->links() }}
-        </div>
-    </div>
     </div>
 @endsection
