@@ -12,13 +12,13 @@ class FashionController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Fashion::orderBy('updated_at', 'desc')->paginate(10);
-
-        if (count($posts) > 0) {
-            $headline = $posts->shift();
-        } else {
+        $headline = Fashion::orderBy('updated_at', 'desc')->first();
+        if (!$headline) {
             $headline = null;
         }
+    
+        $posts = Fashion::orderBy('updated_at', 'desc')->paginate(10);
+        
 
         // fashion/index.blade.php ファイルを渡している
         // また View テンプレートに headline、 posts、という変数を渡している
@@ -39,12 +39,8 @@ class FashionController extends Controller
                             ->orderBy('updated_at', 'desc')->paginate(10);
         }
         
-        if (count($posts) > 0) {
-            $headline = $posts->shift();
-        } else {
-            $headline = null;
-        }
-        
+        $headline = null;
+        //dd($posts);
         return view('fashion.index', ['headline' => $headline, 'posts' => $posts]);
     }
 }
