@@ -94,9 +94,9 @@
                  @yield('content')
             </main>
             <div class="row">
-                <div class="d-flex justify-content-center">
-                    {{ $posts->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
-                </div>
+                    <div class="d-flex justify-content-center">
+                        {{ $posts->appends(request()->query())->links('vendor.pagination.original') }}
+                    </div>
             </div>
         </div>
     </body>
