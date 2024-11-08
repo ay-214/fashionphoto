@@ -82,7 +82,7 @@
             <h5>低身長さんの、毎日のコーディネートにヒントを。</h5>
             </div>
             {{-- 投稿に対してフリーワードでの検索機能をつける --}} 
-            <h6>Let's Search!</h6>
+            <h6>...Let's Search!</h6>
             <form action="{{ route('fashion.search') }}" 
                  method="GET">
                 <input type="search" name="query" placeholder="検索..." required>
@@ -93,6 +93,11 @@
                  {{-- コンテンツをここに入れる --}}
                  @yield('content')
             </main>
+            <div class="row">
+                    <div class="d-flex justify-content-center">
+                        {{ $posts->appends(request()->query())->links('vendor.pagination.original') }}
+                    </div>
+            </div>
         </div>
     </body>
 </html>

@@ -17,7 +17,7 @@ class FashionController extends Controller
             $headline = null;
         }
     
-        $posts = Fashion::orderBy('updated_at', 'desc')->paginate(10);
+        $posts = Fashion::orderBy('updated_at', 'desc')->paginate(9);
         
 
         // fashion/index.blade.php ファイルを渡している
@@ -36,7 +36,7 @@ class FashionController extends Controller
             
             $posts = Fashion::where('title', 'LIKE', "%{$query}%")
                             ->orWhere('body', 'LIKE', "%{$query}%")
-                            ->orderBy('updated_at', 'desc')->paginate(10);
+                            ->orderBy('updated_at', 'desc')->paginate(9);
         }
         
         $headline = null;
