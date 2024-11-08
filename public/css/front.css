@@ -1,0 +1,62 @@
+body {
+  color: #202634;
+  background-color: #F1F1F1;
+}
+
+.h2 {
+  font-size: large;
+  color: #515457;
+}
+
+.h3 {
+  font-size: medium;
+  color: #515457;
+}
+
+.navbar-laravel {
+  color: #202634;
+  background-color: #8BB1D5;
+}
+
+.header .logo {
+  width: 120px;
+  height: 82px;
+  color: #202634;
+}
+
+.headline .caption {
+  position: relative;
+  width: 120px;
+}
+.headline .caption .image img {
+  width: 100%;
+}
+.headline .caption .title {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(246, 247, 249, 0.367);
+}
+.headline .caption .title h1 {
+  color: #202634;
+  font-size: 1.2em;
+}
+.headline .caption .body {
+  font-size: 0.8em;
+}
+
+.posts .post .date {
+  font-size: 0.6em;
+  color: #202634;
+}
+.posts .post .title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.posts .post .body {
+  font-size: 0.8em;
+}
+.posts .post .image img {
+  width: 100%;
+}
