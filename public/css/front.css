@@ -3,9 +3,47 @@ body {
   background-color: #F1F1F1;
 }
 
+.toptitle {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 300%;
+  text-align: center;
+  color: #03276f;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.subtitle1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: large;
+  text-align: center;
+  color: #041842;
+}
+
+.subtitle2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: large;
+  text-align: center;
+  color: #041842;
+}
+
+.search {
+  margin: 0 auto;
+}
+
+.newpost {
+  color: #434447;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 150%;
+  font-weight: bolder;
+}
+
+.title p-2 {
+  font-size: 60%;
+}
+
 .h2 {
   font-size: large;
-  color: #515457;
+  color: #1865b3;
 }
 
 .h3 {

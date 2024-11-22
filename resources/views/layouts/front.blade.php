@@ -26,8 +26,9 @@
         <link href="{{ asset('css/front.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="col-md-1 mx-auto">
-         <h2>Styling for a height of 150</h2>
+        <div class="mx-auto">
+            
+         <div class="toptitle">Styling/150cm</div>
         </div>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバー --}}
@@ -79,15 +80,18 @@
             </nav>
             {{-- ここまでナビゲーションバー --}}
             <div class="col-md-4 mx-auto">
-            <h5>低身長さんの、毎日のコーディネートにヒントを。</h5>
+            <div class="subtitle1">身長150cmが着る、</div>
+            <div class="subtitle2">低身長さんのためのコーディネートヒント。</div>
             </div>
             {{-- 投稿に対してフリーワードでの検索機能をつける --}} 
-            <h6>...Let's Search!</h6>
-            <form action="{{ route('fashion.search') }}" 
-                 method="GET">
-                <input type="search" name="query" placeholder="検索..." required>
-                <button type="submit">Search</button>
-            </form>
+            <div class="search">
+                <h6>...コーディネートを検索</h6>
+                    <form action="{{ route('fashion.search') }}" 
+                        method="GET">
+                        <input type="search" name="query" placeholder="検索..." required>
+                        <button type="submit">Search</button>
+                    </form>
+            </div>
 
             <main class="py-4">
                  {{-- コンテンツをここに入れる --}}
@@ -95,7 +99,7 @@
             </main>
             <div class="row">
                     <div class="d-flex justify-content-center">
-                        {{ $posts->appends(request()->query())->links('vendor.pagination.original') }}
+                        {{ $posts->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
                     </div>
             </div>
         </div>
