@@ -1,18 +1,24 @@
-.pagination .page-link {
-    padding: 10px 15px;
-    margin: 0 5px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #007bff;
-    border: none; 
-}
+.pagination .page-item .page-link {
+    text-transform: uppercase;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 38px;
+    border: 2px solid #a9a9a9;
+    background-color: inherit;
+    line-height: 38px;
+    padding: 0;
+    color: #313231;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-align: center;
+    margin: 0 2px;
 
-.pagination .page-link:hover {
-    background-color: #7d00b3;
+    &:hover {
+        background-color: #979797;
+    }
 }
 
 .pagination .active .page-link {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #979797;
 }
 

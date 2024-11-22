@@ -5,7 +5,7 @@
         @if (!is_null($headline))
             <div class="row">
                 <div class="headline col-md-10 mx-auto">
-                    <h3>New! -新着スタイリングスナップ-</h3>
+                    <div class="newpost">New! -新着スタイリングスナップ-</div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="caption mx-auto">

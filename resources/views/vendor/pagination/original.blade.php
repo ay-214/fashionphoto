@@ -2,6 +2,7 @@
 <nav class="d-flex justify-items-center justify-content-between">
     <div class="d-flex justify-content-between flex-fill d-sm-none">
         <ul class="content_detail__pagination cdp d-flex">
+
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
                 <li class="cdp_i disabled" aria-disabled="true">
@@ -12,6 +13,15 @@
                     <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">@lang('pagination.previous')</a>
                 </li>
             @endif
+
+            {{-- ページ番号 --}}
+            @foreach (range(1, $paginator->lastPage()) as $page)
+            @if ($page == $paginator->currentPage())
+                <li class="active"><span>{{ $page }}</span></li>
+            @else
+                <li><a href="{{ $paginator->url($page) }}">{{ $page }}</a></li>
+            @endif
+            @endforeach
 
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
@@ -41,6 +51,7 @@
 
         <div>
             <ul class="content_detail__pagination cdp d-flex">
+                
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
                     <li class="cdp_i disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">

@@ -17,7 +17,7 @@ class FashionController extends Controller
             $headline = null;
         }
     
-        $posts = Fashion::orderBy('updated_at', 'desc')->paginate(9);
+        $posts = Fashion::orderBy('updated_at', 'desc')->paginate(9)->onEachSide(1);
         
 
         // fashion/index.blade.php ファイルを渡している
