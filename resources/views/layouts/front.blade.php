@@ -28,7 +28,7 @@
     <body>
         <div class="mx-auto">
             
-         <div class="toptitle">Styling/150cm</div>
+         <div class="toptitle">Styling/minimum</div>
         </div>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバー --}}
@@ -80,8 +80,8 @@
             </nav>
             {{-- ここまでナビゲーションバー --}}
             <div class="col-md-4 mx-auto">
-            <div class="subtitle1">身長150cmが着る、</div>
-            <div class="subtitle2">低身長さんのためのコーディネートヒント。</div>
+            <div class="subtitle1">ミニマム身長さん達で作る、</div>
+            <div class="subtitle2">ミニマム身長さんのためのコーディネートヒント。</div>
             </div>
             {{-- 投稿に対してフリーワードでの検索機能をつける --}} 
             <div class="search">
