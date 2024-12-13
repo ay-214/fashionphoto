@@ -84,8 +84,8 @@
             <div class="subtitle2">ミニマム身長さんのためのコーディネートヒント。</div>
             </div>
             {{-- 投稿に対してフリーワードでの検索機能をつける --}} 
-            <div class="search">
-                <h6>...コーディネートを検索</h6>
+            <div class="col-md-2 mx-4">
+                <div>...コーディネートを検索</div>
                     <form action="{{ route('fashion.search') }}" 
                         method="GET">
                         <input type="search" name="query" placeholder="検索..." required>
