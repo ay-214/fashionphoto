@@ -68,13 +68,13 @@ body {
   margin-bottom: 20px;
   text-align: left;
 }
-.headline .caption _ .title {
+.headline .caption .title {
   width: 150%;
   position: relative;
   padding: 0%;
   background-color: rgba(246, 247, 249, 0.367);
 }
-.headline .caption _ .title h1 {
+.headline .caption .title h1 {
   color: #202634;
   font-size: 1.2em;
 }
@@ -95,6 +95,9 @@ body {
 
 .body {
   font-size: 1.1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .image img {
